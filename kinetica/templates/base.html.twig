@@ -7,13 +7,95 @@
            and uncomment the following Encore helpers to start using Symfony UX #}
         {% block stylesheets %}
             {#{{ encore_entry_link_tags('app') }}#}
+          <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
         {% endblock %}
 
         {% block javascripts %}
             {#{{ encore_entry_script_tags('app') }}#}
         {% endblock %}
+        <style>
+            body {
+                margin: 0 auto;
+                font: normal 16px sans-serif;
+            }
+            header{
+                padding: 12px 60px;
+                display: flex; 
+                color: #fff;
+                background-color: #1d6d8f;
+                justify-content: space-between;
+                align-items: center;
+            }
+            header > div {
+                margin: 12px 0;
+            }
+            @media (max-width: 1000px){
+            header{
+                flex-direction: column;
+                align-items: flex-start;
+                }
+            }
+            
+            .header-left {
+                font: normal 28px 'Fugaz One', cursive;
+            }
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            .header-left span {
+                color: #a11225;
+            }
+            .header-center ul {
+                list-style: none;
+            }
+            .header-center ul li {
+                margin: 0 15px 0 0;
+                display: inline-block;
+                margin: 0 15px;
+            }
+            .header-center ul li a {
+                text-decoration: none;
+                color: #fff;
+                cursor: pointer;
+                font-weight: bold;
+            }
+            .header-right button {
+                color: #fff;
+                cursor: pointer;
+                font-weight: 800;
+                text-transform: uppercase;
+                padding: 12px 30px;
+                border: 2px solid #FFFFFF;
+                border-radius: 4px;
+                background-color: transparent;
+            }
+        </style>
     </head>
     <body>
+     <header>
+    <div class="header-left"><span>Какой-то</span>Блог</div>
+    <div class="header-center">
+        {% if  is_granted('IS_AUTHENTICATED_FULLY') %}
+            <ul>
+                <li><a href="{{ path('post_index') }}">Мои записи</a></li>
+                <li><a href="{{ path('comment_index') }}">Мои комментарии</a></li>
+                <li><a href="{{ path('post_new') }}">Создать пост</a></li>
+            </ul>
+        {% endif %}
+    </div>
+        <div class="header-right">
+            {% if  is_granted('IS_AUTHENTICATED_FULLY') %}
+                <a href="{{ path('app_logout') }}"><button>Выйти</button></a>
+            {% else %}
+                <a href="{{ path('app_login') }}"><button>Войти</button></a>
+                <a href="{{ path('app_register') }}"><button>Зарегестрироваться</button></a>
+            {% endif %}
+        </div>
+    </header>
         {% block body %}{% endblock %}
+   
+    
     </body>
 </html>

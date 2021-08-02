@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MainController!{% endblock %}
+
+{% block body %}
+<style>
+    .wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .row  { display: -ms-flexbox; -ms-flex-wrap: wrap; flex-wrap: wrap; margin-right: -15px; margin-left: -15px; }
+    .post-block  { background: #a6b8f5; max-width: 90%; margin: 10px; padding: 2px; border: 2px solid rgb(97, 97, 97); }
+</style>
+
+<div class="wrapper">
+    <div class="row">
+        {% for post in posts %}
+            <div class="post-block">
+                <p class="post-author">{{ post.uid }}</p>
+                <p class="post-title">{{ post.title }}</p>
+                <p class="post-content"> {{ post.content }}</p>
+                <ul>
+                    {% for comment in post.comments %}
+                
+                        <li><p class="comment-author"> {{ comment.uid }} </p>
+                            <p class="comment-content"></p>{{ comment.content }} </p></li>
+                
+                    {% endfor %}
+                </ul>    
+             </div>   
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

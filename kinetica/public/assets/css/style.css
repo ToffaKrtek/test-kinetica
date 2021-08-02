@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+    width:100%;
+    height: 100%;
+}
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2.25rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+h4 {
+    font-size: 1.75rem;
+}
+
+h5 {
+    font-size: 1.5rem;
+}
+
+h6 {
+    font-size: 1.25rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 480px) {
+    html {
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 992px) {
+    html {
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 1200px) {
+    html {
+        font-size: 16px;
+    }
+}
+body {
+                margin: 0 auto;
+                font: normal 16px sans-serif;
+            }
+            header{
+                padding: 12px 60px;
+                display: flex; 
+                color: #fff;
+                background-color: #1d6d8f;
+                justify-content: space-between;
+                align-items: center;
+            }
+            header > div {
+                margin: 12px 0;
+            }
+            @media (max-width: 1000px){
+            header{
+                flex-direction: column;
+                align-items: flex-start;
+                }
+            }
+            
+            .header-left {
+                font: normal 28px 'Fugaz One', cursive;
+            }
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            .header-left span {
+                color: #a11225;
+            }
+            .header-center ul {
+                list-style: none;
+            }
+            .header-center ul li {
+                margin: 0 15px 0 0;
+                display: inline-block;
+                margin: 0 15px;
+            }
+            .header-center ul li a {
+                text-decoration: none;
+                color: #fff;
+                cursor: pointer;
+                font-weight: bold;
+            }
+            .header-right button {
+                color: #fff;
+                cursor: pointer;
+                font-weight: 800;
+                text-transform: uppercase;
+                padding: 12px 30px;
+                border: 2px solid #FFFFFF;
+                border-radius: 4px;
+                background-color: transparent;
+            }
